@@ -1,0 +1,123 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --primary: #1b9aaa;
+  --text: #0d1b2a;
+  --muted: #5b6871;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding-bottom: 80px;
+}
+
+.app-header {
+  background: linear-gradient(120deg, #0d1b2a, #1b9aaa);
+  color: white;
+  padding: 20px 16px 10px;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hero h1 { margin: 4px 0 8px; font-size: 1.6rem; }
+.hero .sub { margin: 0; color: #e5f8ff; line-height: 1.5; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; margin: 0; color: #c7f1ff; }
+.badge { background: rgba(255,255,255,0.12); padding: 8px 12px; border-radius: 16px; font-weight: 700; }
+
+main { padding: 12px; }
+.section {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+.section h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.section p { margin: 4px 0; color: var(--muted); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card h3 { margin: 0; font-size: 1rem; }
+.card .meta { font-size: 0.85rem; color: var(--muted); }
+.status { font-size: 0.85rem; color: #0f7b0f; font-weight: 700; }
+.button-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.button {
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(27,154,170,0.35);
+}
+.button.secondary { background: #e8f4f8; color: var(--text); box-shadow: none; }
+.button.ghost { background: transparent; color: var(--primary); box-shadow: none; border: 1px solid #bfeaf4; }
+
+.tag { display: inline-block; background: #eef6f8; color: var(--text); border-radius: 999px; padding: 4px 10px; font-size: 0.8rem; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: #0d1b2a;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  z-index: 10;
+}
+.tab {
+  background: none;
+  border: none;
+  color: #c7f1ff;
+  padding: 12px 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tab.active { color: #fff; border-top: 3px solid #1b9aaa; padding-top: 9px; }
+
+.list { display: flex; flex-direction: column; gap: 10px; }
+.list-item {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+.list-item h4 { margin: 4px 0; }
+.small { color: var(--muted); font-size: 0.9rem; }
+
+.progress-bar { width: 100%; height: 10px; background: #edf2f7; border-radius: 999px; overflow: hidden; }
+.progress-bar span { display: block; height: 100%; background: linear-gradient(120deg,#1b9aaa,#6ee7ff); }
+
+.quiz-question { background: #f8fbfd; border-radius: 12px; padding: 12px; border: 1px solid #e0edf5; }
+.choices { display: flex; flex-direction: column; gap: 8px; }
+.choices label { background: #fff; border-radius: 10px; padding: 10px; border: 1px solid #dce7ee; cursor: pointer; }
+.result { padding: 12px; border-radius: 12px; background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
+
+.search-box { display: flex; gap: 8px; margin-bottom: 8px; }
+.search-box input, .search-box select { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #dce7ee; }
+
+.link-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.link-row a { color: var(--primary); font-weight: 700; text-decoration: none; }
+
+@media (min-width: 840px) {
+  body { margin: 0 auto; max-width: 960px; }
+  .tab-bar { max-width: 960px; margin: 0 auto; left: 50%; transform: translateX(-50%); }
+}

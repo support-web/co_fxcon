@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FX学習ミニアプリ</title>
+  <meta name="description" content="1分で学べるFX基礎レッスンと3問クイズ。ホーム画面に追加していつでも復習。">
+  <meta property="og:title" content="FX学習ミニアプリ">
+  <meta property="og:description" content="10本の1分レッスンと3問クイズでFXの基礎をスマホで学ぶ">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/ogp.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <meta name="theme-color" content="#0d1b2a">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">1分で学べるFX基礎</p>
+        <h1>FX学習ミニアプリ</h1>
+        <p class="sub">SNS流入向けのスキマ学習。10本のレッスンと3問クイズで基礎を固めよう。</p>
+      </div>
+      <div class="badge">PWA対応</div>
+    </div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <nav class="tab-bar" aria-label="主要メニュー">
+    <button class="tab" data-target="home">ホーム</button>
+    <button class="tab" data-target="learn">学ぶ</button>
+    <button class="tab" data-target="quiz">クイズ</button>
+    <button class="tab" data-target="glossary">用語</button>
+    <button class="tab" data-target="me">マイ</button>
+  </nav>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
